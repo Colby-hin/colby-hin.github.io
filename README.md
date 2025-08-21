@@ -44,7 +44,7 @@ My journey in cybersecurity has strengthened my passion for threat detection and
 </div>
 
 ## Certifications
-[Provide certifications that you have obtained. Use ChatGPT to help create the link - Remove this afterwards]]
+
 <div>
 ## Certifications  
 
