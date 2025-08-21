@@ -1,9 +1,8 @@
 # Hello, I'm Colby 
 <a href="https://www.linkedin.com/in/colby-hinchy/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
-[Brief Introduction - Remove this afterwards]
 
-I am a recent graduate with a profound interest in technology and a dedication to solving complex problems.
+Motivated Entry-Level Cybersecurity student with 9 months of experience in IT support. I am looking to contribute to the success of an organization while continuing to develop my technical skill sets as I progress my education. 
 
 ## Objective
 [Provide Objective - Remove this afterwards]]
