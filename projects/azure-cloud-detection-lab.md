@@ -56,7 +56,4 @@ I simulated brute force login attempts on the VM. Sentinel generated alerts as e
 
 ---
 
-## Next Steps
-- Add additional detection rules  
-- Integrate threat intelligence feeds  
-- Automate response with playbooks  
+
