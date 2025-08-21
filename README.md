@@ -7,8 +7,7 @@ Motivated Entry-Level Cybersecurity student with 9 months of experience in IT su
 ## Objective
 [Provide Objective - Remove this afterwards]]
 
-My journey in computer science has led me to develop a passion for cybersecurity, and I am now eager to transition into this field, specifically aiming to join a Security Operations Center (SOC) as a Tier 1 Analyst.
-
+My journey in cybersecurity has strengthened my passion for threat detection and incident response. With hands on experience in IT support, labs, and security projects, I am working toward becoming a Cybersecurity Analyst.
 ## Skills
 [Provide skills and associated project. Make sure to hyperlink the project - Remove this afterwards]]
 
