@@ -5,7 +5,7 @@
 Motivated Entry-Level Cybersecurity student with 9 months of experience in IT support. I am looking to contribute to the success of an organization while continuing to develop my technical skill sets as I progress my education. 
 
 ## Objective
-[Provide Objective - Remove this afterwards]]
+
 
 My journey in cybersecurity has strengthened my passion for threat detection and incident response. With hands on experience in IT support, labs, and security projects, I am working toward becoming a Cybersecurity Analyst.
 ## Skills
