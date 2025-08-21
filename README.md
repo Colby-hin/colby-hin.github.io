@@ -13,7 +13,7 @@ My journey in cybersecurity has strengthened my passion for threat detection and
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| SIEM Implementation and Log Analysis | [Azure Cloud Detection Lab](#azure-cloud-detection-lab) |
+| SIEM Implementation and Log Analysis | [Azure Cloud Detection Lab](projects/azure-cloud-detection-lab.md) |
 | Network Traffic Monitoring and Attack Detection | <a href="https://google.com">Detection Lab</a>|
 | Security Automation with Shuffle SOAR         | SOC Automation Lab|
 | Incident Response Planning and Execution      | SOC Automation Lab|
