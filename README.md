@@ -1,4 +1,4 @@
-# Hello, I'm Colby 
+# Hello, I'm Colby Hinchy
 <a href="https://www.linkedin.com/in/colby-hinchy/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
 
@@ -9,7 +9,7 @@ Motivated Entry Level Cybersecurity Professional with 9 months of experience in 
 
 My journey in cybersecurity has strengthened my passion for threat detection and incident response. With hands on experience in IT support, labs, and security projects, I am working toward becoming a Cybersecurity Analyst.
 ## Skills
-[Provide skills and associated project. Make sure to hyperlink the project - Remove this afterwards]]
+
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
