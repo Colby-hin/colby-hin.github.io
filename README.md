@@ -61,4 +61,4 @@ My journey in cybersecurity has strengthened my passion for threat detection and
 - SOC Automation Project
 
 
-## Azure Cloud Detection Lab
+
