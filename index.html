@@ -1,11 +1,65 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Colby Hin — Portfolio Test</title>
-  </head>
-  <body>
-    <h1>Hello, world! 🚀</h1>
-    <p>If you see this page, GitHub Pages is working!</p>
-  </body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colby Hin — Cybersecurity Portfolio</title>
+  <meta name="description" content="Cybersecurity projects, labs, and write-ups by Colby Hin." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🛡️</text></svg>">
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .prose a { text-decoration: underline; }
+  </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased">
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 backdrop-blur border-b border-neutral-800/60">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="font-semibold tracking-tight">Colby Hin</a>
+      <nav class="text-sm space-x-4">
+        <a href="#projects" class="hover:opacity-80">Projects</a>
+        <a href="#skills" class="hover:opacity-80">Skills</a>
+        <a href="#about" class="hover:opacity-80">About</a>
+        <a href="resume.pdf" class="hover:opacity-80">Resume</a>
+        <a href="#contact" class="hover:opacity-80">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="max-w-5xl mx-auto px-4">
+    <!-- Hero -->
+    <section class="py-16 md:py-24">
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Cybersecurity Portfolio — <span class="text-neutral-300">Colby Hin</span></h1>
+      <p class="mt-4 text-neutral-300 max-w-2xl">Cybersecurity student focused on <strong>blue-team detections</strong>, <strong>vulnerability management</strong>, and <strong>web app security</strong>. I enjoy turning logs into insights and shipping practical defenses.</p>
+      <div class="mt-6 flex flex-wrap gap-3 text-sm">
+        <a href="#projects" class="px-4 py-2 rounded-2xl border border-neutral-700 hover:bg-neutral-800">See Projects</a>
+        <a href="resume.pdf" class="px-4 py-2 rounded-2xl border border-neutral-700 hover:bg-neutral-800">Download Resume</a>
+        <a href="mailto:YOURNAME@example.com" class="px-4 py-2 rounded-2xl border border-neutral-700 hover:bg-neutral-800">Email Me</a>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-12 border-t border-neutral-900">
+      <h2 class="text-2xl md:text-3xl font-bold">Projects</h2>
+      <p class="mt-2 text-neutral-300">Evidence-based write-ups. Each card links to a detailed page or repo.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <!-- Example project card -->
+        <article class="rounded-2xl border border-neutral-800 p-5 bg-neutral-900/40">
+          <h3 class="font-semibold text-lg">Home SOC Lab</h3>
+          <p class="mt-2 text-neutral-300">Built a small SOC with Wazuh + Zeek, created detection rules for SSH brute-force and DNS exfiltration.</p>
+          <ul class="mt-2 text-neutral-400 text-sm list-disc pl-5">
+            <li>Tools: Wazuh, Zeek, Elastic</li>
+            <li>Outcome: 3 detections + dashboards</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-12 border-t border-neutral-900">
+      <h2 class="text-2xl md:text-3xl font-bold">Skills</h2>
+      <ul class="mt-4 grid sm:grid-cols-2 md:grid-cols-3 gap-2 text-sm text-neutral-200">
+        <li class="border border-neutral-800 rounded-xl px-3 py-2">SIEM: Wazuh / Elastic</li>
+        <li class="border border-neutral-800 rounded-xl px-3
