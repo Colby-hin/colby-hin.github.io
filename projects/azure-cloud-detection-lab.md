@@ -20,7 +20,8 @@ I set up Azure Log Analytics Workspace and integrated it with Azure Sentinel (SI
 
 ### 1. Deploying the VM
 I created a Windows VM inside Azure and enabled logging.
-![VM Deployment Screenshot](../images/vm-deployment.png)
+<img width="1824" height="592" alt="image" src="https://github.com/user-attachments/assets/40dae382-691d-4342-8a7d-518811a3774c" />
+
 
 ---
 
