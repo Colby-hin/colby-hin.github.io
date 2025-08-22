@@ -26,7 +26,8 @@ I created a Windows VM inside Azure and enabled logging.
 
 ### 2. Connecting Logs
 I connected the VM to **Azure Log Analytics Workspace** and verified event logs were being ingested.
-![Log Analytics Screenshot](../images/log-analytics.png)
+<img width="2484" height="930" alt="image" src="https://github.com/user-attachments/assets/fbcf5e9f-f226-4a18-8a27-cabdbb9c16cd" />
+
 
 ---
 
