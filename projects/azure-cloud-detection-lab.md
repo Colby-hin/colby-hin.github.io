@@ -40,7 +40,8 @@ Enabled **Azure Sentinel** on the workspace and created custom analytics rules.
 
 ### 4. Detection Testing
 I simulated brute force login attempts on the VM. Sentinel generated alerts as expected.
-![Alert Screenshot](../images/sentinel-alert.png)
+<img width="1873" height="346" alt="image" src="https://github.com/user-attachments/assets/f2de8364-0d3d-4daa-86c1-7ad4ace37aab" />
+
 
 ---
 
