@@ -13,7 +13,7 @@ My journey in cybersecurity has strengthened my passion for threat detection and
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| SIEM Implementation and Log Analysis | [Azure Cloud Detection Lab](projects/azure-cloud-detection-lab.md) |
+| SIEM Implementation and Log Analysis | [Azure Honeypot and Attack Map](projects/azure-cloud-detection-lab.md) |
 
 
 ## Tools
