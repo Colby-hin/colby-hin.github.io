@@ -1,8 +1,8 @@
 # Azure Cloud Detection Lab
 
 ## Overview
-In this project, I set up **Azure Sentinel (SIEM)** and configured it to detect malicious activity inside a cloud environment.  
-This lab demonstrates my skills in log collection, threat detection, and incident response.
+In this project, I deployed a honeypot virtual machine in Azure, intentionally exposed to the public internet to attract and log malicious activity.
+I set up Azure Log Analytics Workspace and integrated it with Azure Sentinel (SIEM) to collect and analyze security events.
 
 ---
 
