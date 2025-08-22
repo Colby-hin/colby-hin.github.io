@@ -32,7 +32,6 @@ I connected the VM to **Azure Log Analytics Workspace** and verified event logs 
 
 ### 3. Configuring Sentinel
 Enabled **Azure Sentinel** on the workspace and created custom analytics rules.
-![Sentinel Setup Screenshot](../images/sentinel-setup.png)
 <img width="2440" height="1177" alt="image" src="https://github.com/user-attachments/assets/10241da2-6ea2-46db-a820-a56ad86bc63b" />
 
 
