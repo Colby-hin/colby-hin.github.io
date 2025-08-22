@@ -40,6 +40,7 @@ Enabled **Azure Sentinel** on the workspace and created custom analytics rules.
 I simulated brute force login attempts on the VM. Sentinel generated alerts as expected.
 ![Alert Screenshot](../images/sentinel-alert.png)
 
+---
 
 ### 5. Building the Attack Map
 I created a geolocation based **attack map** in Azure Sentinel to visualize where incoming attacks originated.  
