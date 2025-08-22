@@ -12,13 +12,14 @@ This lab demonstrates my skills in log collection, threat detection, and inciden
 - Set up Azure Sentinel (SIEM)
 - Create detection rules for suspicious activity
 - Investigate alerts using KQL queries
+- Develope an attack map dashboard showing attacker geolocations
 
 ---
 
 ## Steps
 
 ### 1. Deploying the VM
-I created a Windows Server VM inside Azure and enabled logging.
+I created a Windows VM inside Azure and enabled logging.
 ![VM Deployment Screenshot](../images/vm-deployment.png)
 
 ---
@@ -38,6 +39,10 @@ Enabled **Azure Sentinel** on the workspace and created custom analytics rules.
 ### 4. Detection Testing
 I simulated brute force login attempts on the VM. Sentinel generated alerts as expected.
 ![Alert Screenshot](../images/sentinel-alert.png)
+
+
+### 5. Building the Attack Map
+I created a geolocation-based **attack map** in Azure Sentinel to visualize where incoming attacks originated.  
 
 ---
 
