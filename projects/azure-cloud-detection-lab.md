@@ -42,7 +42,7 @@ I simulated brute force login attempts on the VM. Sentinel generated alerts as e
 
 
 ### 5. Building the Attack Map
-I created a geolocation-based **attack map** in Azure Sentinel to visualize where incoming attacks originated.  
+I created a geolocation based **attack map** in Azure Sentinel to visualize where incoming attacks originated.  
 
 ---
 
