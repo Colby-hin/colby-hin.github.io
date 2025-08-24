@@ -48,7 +48,8 @@ I simulated brute force login attempts on the VM. Sentinel generated alerts as e
 
 ### 5. Building the Attack Map
 I created a geolocation based **attack map** to visualize where incoming attacks originated.
-<img width="1688" height="1223" alt="Screenshot 2025-08-22 114126" src="https://github.com/user-attachments/assets/8971d725-abe3-4a1d-95bf-24b0a7a11351" />
+<img width="1345" height="682" alt="image" src="https://github.com/user-attachments/assets/fd9ab17f-6479-40e6-bad6-443f281f88da" />
+
 
 
 ---
