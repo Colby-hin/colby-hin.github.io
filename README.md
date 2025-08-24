@@ -28,7 +28,6 @@ My journey in cybersecurity has strengthened my passion for threat detection and
 ## Certifications
 
 <div>
-## Certifications  
 
 <div>
   <img src="https://img.shields.io/badge/CompTIA-A%2B-EE1C25?style=for-the-badge&logo=CompTIA&logoColor=white" />
