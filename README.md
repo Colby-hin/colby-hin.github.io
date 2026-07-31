@@ -1,1 +1,0 @@
-# colbyhinchy.github.io
