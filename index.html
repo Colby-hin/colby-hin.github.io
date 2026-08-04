@@ -213,8 +213,8 @@
         border-bottom-color: transparent;
       }
       .nav-links a.nav-resume:hover { border-bottom-color: var(--signal); }
-      .nav-links a.nav-resume::before {
-        content: "↓ ";
+      .nav-links a.nav-resume::after {
+        content: " ↗";
         opacity: 0.7;
       }
 
@@ -303,7 +303,7 @@
         color: #fff;
       }
       .chip-lead::after {
-        content: "↓";
+        content: "↗";
         font-size: 12px;
         line-height: 1;
       }
@@ -595,7 +595,8 @@
             <a
               class="nav-resume"
               href="assets/colby-hinchy-resume.pdf"
-              download="Colby-Hinchy-Resume.pdf"
+              target="_blank"
+              rel="noopener"
               >Résumé</a
             >
           </li>
@@ -620,7 +621,8 @@
             <a
               class="chip chip-lead"
               href="assets/colby-hinchy-resume.pdf"
-              download="Colby-Hinchy-Resume.pdf"
+              target="_blank"
+              rel="noopener"
               >Résumé</a
             >
             <a class="chip" href="mailto:colbyhinchy@gmail.com">Email</a>
@@ -925,7 +927,8 @@
                 <a
                   class="chip chip-lead"
                   href="assets/colby-hinchy-resume.pdf"
-                  download="Colby-Hinchy-Resume.pdf"
+                  target="_blank"
+                  rel="noopener"
                   >Résumé (PDF)</a
                 >
                 <a class="chip" href="mailto:colbyhinchy@gmail.com">colbyhinchy@gmail.com</a>
