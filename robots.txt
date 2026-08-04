@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://colby-hin.github.io/sitemap.xml
