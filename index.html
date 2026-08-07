@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- BUILD 2026-08-04-b · 4 roles incl. Beth Israel Lahey Health · no team-lead subtitle · no resume button -->
+<!-- BUILD 2026-08-04-k · Log(N) Pacific end date 08/2026 · 7 certs · 4 roles -->
   <head>
     <meta charset="utf-8" />
     <title>Colby Hinchy | Cybersecurity Professional</title>
@@ -588,26 +588,27 @@
           <div class="section-head">
             <h2 id="credentials-title">Credentials</h2>
             <span class="rule"></span>
-            <span class="count">2 schools · 6 certs</span>
+            <span class="count">2 schools · 7 certs</span>
           </div>
           <div class="record reveal">
-            <div class="record-id">EDU<small>2024–2027</small></div>
+            <div class="record-id">EDU</div>
             <div>
               <h3 class="record-title">The Pennsylvania State University</h3>
-              <p class="record-sub">B.S., Security and Risk Analysis (Information and Cyber Security) · 2026–2027</p>
+              <p class="record-sub">B.S., Security and Risk Analysis (Information and Cyber Security)</p>
               <h3 class="record-title">MassBay Community College</h3>
-              <p class="record-sub">Cybersecurity · Dean's List · 2024–2026</p>
+              <p class="record-sub">Cybersecurity · Dean's List</p>
             </div>
           </div>
           <div class="record reveal">
-            <div class="record-id">CERTS<small>6 held</small></div>
+            <div class="record-id">CERTS<small>7 held</small></div>
             <div class="tags">
-              <span class="tag">CompTIA SecAI+</span>
+              <span class="tag">Certified GRC Engineer &ndash; Practitioner (CGE-P)</span>
               <span class="tag">CompTIA CySA+</span>
               <span class="tag">CompTIA Security+</span>
-              <span class="tag">Microsoft Azure (AZ-900)</span>
-              <span class="tag">Okta Certified Professional</span>
+              <span class="tag">CompTIA SecAI+</span>
               <span class="tag">Purdue AI Policy and Governance</span>
+              <span class="tag">Okta Certified Professional</span>
+              <span class="tag">Microsoft Azure (AZ-900)</span>
             </div>
           </div>
         </div>
@@ -654,7 +655,7 @@
           </article>
 
           <article class="record reveal">
-            <div class="record-id">EXP-02<small>01/2026–07/2026</small></div>
+            <div class="record-id">EXP-02<small>01/2026–08/2026</small></div>
             <div>
               <h3 class="record-title">Log(N) Pacific</h3>
               <p class="record-sub">Security Analyst Intern · GRC &amp; Vulnerability Management Focus</p>
@@ -715,6 +716,10 @@
                   Administered account and privilege lifecycles in Entra ID,
                   enforcing least-privilege access governance through RBAC and
                   MFA.
+                </li>
+                <li>
+                  Supported the setup of SSO utilizing SAML for new SaaS apps in
+                  Entra ID.
                 </li>
               </ul>
             </div>
@@ -792,6 +797,48 @@
             <article class="project-card reveal">
               <div class="project-head">
                 <span class="project-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.3" /><circle cx="12" cy="12" r="2.3" /><circle cx="19" cy="12" r="2.3" /><path d="M7.3 12h2.4M14.3 12h2.4" /></svg>
+                </span>
+                <h3>Governed Patient Intake Pipeline</h3>
+              </div>
+              <p class="project-stack">Terraform · OPA/Rego · GitHub Actions · Cosign · OSCAL · AWS</p>
+              <p>
+                A governance and compliance layer over an AWS serverless
+                patient intake API. The workload holds PHI, so a misconfigured
+                bucket is a reportable breach. Five OPA/Rego policies run
+                through Conftest against the real Terraform plan. Any change
+                that drops KMS encryption, TLS-only access, S3 versioning, or
+                least-privilege Lambda IAM is blocked before merge. Each deploy
+                signs an evidence bundle with keyless Cosign and writes it to an
+                S3 Object Lock vault. An OSCAL component definition maps every
+                control to the HIPAA Security Rule citation it satisfies.
+                Proven both directions in CI: one compliant pull request merged,
+                one deliberately noncompliant pull request blocked.
+              </p>
+              <div class="tags">
+                <span class="tag">Policy as Code</span>
+                <span class="tag">OPA / Rego</span>
+                <span class="tag">Terraform</span>
+                <span class="tag">OSCAL</span>
+                <span class="tag">HIPAA Security Rule</span>
+                <span class="tag">Evidence Automation</span>
+                <span class="tag">GitHub OIDC</span>
+              </div>
+              <div class="project-links">
+                <a class="chip" href="https://github.com/Colby-hin/cgep-capstone" target="_blank" rel="noopener">
+                  <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#i-github" /></svg>
+                  Source
+                </a>
+                <a class="chip" href="https://github.com/Colby-hin/cgep-capstone/blob/main/WRITEUP.md" target="_blank" rel="noopener">
+                  <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#i-github" /></svg>
+                  Write-up
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-head">
+                <span class="project-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5M11 8v6M8 11h6" /></svg>
                 </span>
                 <h3>Agentic Threat Hunting Engine</h3>
@@ -822,36 +869,6 @@
                 <a class="chip" href="https://github.com/Colby-hin/agentic-threat-hunter-dashboard" target="_blank" rel="noopener">
                   <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#i-github" /></svg>
                   Dashboard
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card reveal">
-              <div class="project-head">
-                <span class="project-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path d="M12 3l8 4.5-8 4.5-8-4.5L12 3Z" /><path d="M4 12l8 4.5 8-4.5" /><path d="M4 16.5L12 21l8-4.5" /></svg>
-                </span>
-                <h3>Compliant S3 Bucket on AWS</h3>
-              </div>
-              <p class="project-stack">Terraform · AWS S3 · Infrastructure as Code</p>
-              <p>
-                A reusable Terraform primitive that provisions an S3 bucket to a
-                hardened baseline, so the control set lives in version-controlled
-                code instead of being clicked through the console and drifting.
-                Lab evidence is captured in the repo alongside the module,
-                keeping the artifact and the proof it was applied together.
-              </p>
-              <div class="tags">
-                <span class="tag">Terraform</span>
-                <span class="tag">AWS</span>
-                <span class="tag">Infrastructure as Code</span>
-                <span class="tag">Compliance</span>
-                <span class="tag">Evidence</span>
-              </div>
-              <div class="project-links">
-                <a class="chip" href="https://github.com/Colby-hin/cge-p-capstone" target="_blank" rel="noopener">
-                  <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#i-github" /></svg>
-                  Source
                 </a>
               </div>
             </article>
