@@ -104,7 +104,7 @@
     .verify { color: var(--blue-soft); font-size: .81rem; font-weight: 800; margin-top: auto; }
     /* Badges drop into place when their section scrolls into view. */
     .js .cert-card:not(.revealed) { opacity: 0; transform: translateY(-65px) rotate(-1deg) scale(.97); }
-    .js .cert-card { transition: opacity .65s ease, transform .8s cubic-bezier(.18,.85,.26,1.1), border-color .2s, box-shadow .2s; transition-delay: calc(var(--step, 0) * 100ms); }
+    .js .cert-card { transition: opacity .65s ease, transform .8s cubic-bezier(.18,.85,.26,1.1), border-color .2s, box-shadow .2s; transition-delay: calc(var(--step, 0) * 100ms), calc(var(--step, 0) * 100ms), 0ms, 0ms; }
     .js .cert-card.revealed { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
     .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
