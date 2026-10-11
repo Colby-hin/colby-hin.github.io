@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#17191c">
-  <meta name="description" content="Colby Hinchy — cybersecurity professional focused on threat intelligence, detection engineering, threat hunting, and security operations.">
-  <meta property="og:title" content="Colby Hinchy | Threat Intelligence & Detection Engineering">
-  <meta property="og:description" content="Security operations, detection engineering, and threat intelligence projects and experience.">
+  <meta name="description" content="Colby Hinchy — cybersecurity professional focused on emerging threats, intelligence-informed risk mitigation, and security operations.">
+  <meta property="og:title" content="Colby Hinchy | Cyber Threat Intelligence & Risk Mitigation">
+  <meta property="og:description" content="Cyber threat intelligence, risk mitigation, detection engineering, and security experience.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://colby-hin.github.io/">
   <link rel="canonical" href="https://colby-hin.github.io/">
-  <title>Colby Hinchy | Threat Intelligence &amp; Detection Engineering</title>
+  <title>Colby Hinchy | Cyber Threat Intelligence &amp; Risk Mitigation</title>
   <style>
     :root {
       color-scheme: dark;
@@ -40,6 +40,7 @@
         linear-gradient(135deg, #1d2024, #15171a 56%, #191c20);
       -webkit-font-smoothing: antialiased;
     }
+    /* Fine, subtle coal-grain texture. Entirely self-contained. */
     body::before {
       content: "";
       position: fixed;
@@ -67,29 +68,25 @@
     nav a { color: #bec8d3; font-size: .87rem; transition: color .2s; }
     nav a:hover { color: white; }
     .nav-contact { border: 1px solid #506178; padding: 8px 13px; border-radius: 7px; }
-    .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--border); padding: 0; }
     .hero::before { content: ""; position: absolute; right: -150px; top: -190px; width: 550px; height: 550px; border: 1px solid rgba(100,134,174,.10); border-radius: 50%; box-shadow: 0 0 0 85px rgba(86,113,146,.025), 0 0 0 175px rgba(86,113,146,.015); pointer-events: none; }
-    .hero-grid { position: relative; display: grid; grid-template-columns: 1.13fr .87fr; align-items: center; gap: 65px; padding-block: 110px 104px; }
+    .hero-layout { position: relative; display: flex; align-items: center; min-height: 610px; padding-block: 108px 116px; }
+    .hero-copy { max-width: 875px; position: relative; z-index: 1; }
     .kicker { color: var(--blue-soft); font-size: .74rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 13px; }
-    .hero h1 { font-size: clamp(3.7rem, 7.5vw, 6.9rem); letter-spacing: -.08em; line-height: .98; margin: 17px 0 24px; }
+    .hero h1 { font-size: clamp(4rem, 8.5vw, 7.5rem); letter-spacing: -.08em; line-height: .98; margin: 17px 0 27px; }
     .hero h1 span { color: var(--blue); }
-    .role { font-size: clamp(1.18rem, 2.25vw, 1.52rem); font-weight: 700; line-height: 1.4; margin: 0 0 16px; }
+    .role { font-size: clamp(1.2rem, 2.25vw, 1.56rem); font-weight: 700; line-height: 1.4; margin: 0 0 16px; }
     .lead, .intro { color: var(--muted); max-width: 750px; margin: 0; }
+    .hero .lead { max-width: 790px; font-size: 1.035rem; line-height: 1.78; }
     .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
     .btn { display: inline-flex; justify-content: center; align-items: center; padding: 11px 18px; border: 1px solid #56606e; border-radius: 8px; font-size: .92rem; font-weight: 750; transition: transform .2s, background .2s, border-color .2s; }
     .btn:hover { transform: translateY(-2px); border-color: var(--blue-soft); }
     .btn.primary { background: #344b65; border-color: #6885a6; color: #f5f8fc; }
     .btn.primary:hover { background: #405b7b; }
-    .focus-panel { background: linear-gradient(145deg, #22262c, #1a1d22); border: 1px solid #404a55; border-radius: 15px; padding: 26px; box-shadow: 0 22px 60px rgba(0,0,0,.28); }
-    .focus-heading { font: 800 .72rem/1.2 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .16em; color: var(--blue-soft); margin: 0 0 17px; }
-    .focus-item { display: grid; grid-template-columns: 28px 1fr; gap: 12px; border-top: 1px solid #363d47; padding: 17px 0; }
-    .focus-item:last-child { padding-bottom: 0; }
-    .focus-number { color: var(--blue); font: 750 .77rem/1.9 ui-monospace, Consolas, monospace; }
-    .focus-item strong { display: block; font-size: .97rem; }
-    .focus-item small { display: block; font-size: .84rem; margin-top: 3px; color: var(--muted); }
     section { padding: 82px 0; }
     .section-alt { background: rgba(11,14,17,.19); border-top: 1px solid #30353d; border-bottom: 1px solid #30353d; }
     .section-header { margin-bottom: 30px; }
+    .about-followup { margin-top: 18px; }
     h2 { margin: 0 0 12px; font-size: clamp(2rem, 4.2vw, 3.1rem); line-height: 1.13; letter-spacing: -.055em; }
     .cert-section { position: relative; }
     .cert-section::before { content: ""; display: block; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: min(420px,70%); height: 1px; background: linear-gradient(90deg, transparent, #536981, transparent); }
@@ -143,13 +140,12 @@
     .project-card { display: flex; flex-direction: column; }
     .project-card .project-links { margin-top: auto; padding-top: 22px; }
     .project-card .tags { margin-bottom: 4px; }
-    @media (max-width: 1000px) { .hero-grid { gap: 35px; } .cert-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .grid-3 { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 1000px) { .cert-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .grid-3 { grid-template-columns: repeat(2,minmax(0,1fr)); } }
     @media (max-width: 740px) {
       html { scroll-padding-top: 130px; }
       .header-inner { flex-direction: column; align-items: flex-start; padding: 12px 0; gap: 9px; }
       nav { gap: 13px; }
-      .hero-grid { grid-template-columns: 1fr; padding-block: 65px; }
-      .focus-panel { max-width: 570px; }
+      .hero-layout { min-height: auto; padding-block: 75px 90px; }
       section { padding: 62px 0; }
       .grid-2, .grid-3, .job { grid-template-columns: 1fr; }
       .job { gap: 11px; }
@@ -165,7 +161,8 @@
       .wrap { width: min(calc(100% - 28px),var(--max)); }
       nav { gap: 11px; }
       nav a { font-size: .79rem; }
-      .hero h1 { font-size: clamp(3.4rem,14vw,4.8rem); }
+      .hero h1 { font-size: clamp(3.8rem,15vw,5.4rem); }
+      .hero .lead { font-size: .97rem; line-height: 1.7; }
       .cert-grid { gap: 10px; }
       .cert-card { padding: 10px 8px 17px; }
       .badge-area { padding: 7px; }
@@ -198,61 +195,23 @@
   </header>
 
   <main id="main">
-    <!-- INTRODUCTION -->
+    <!-- FIRST SECTION: INTRODUCTION -->
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="kicker">CYBERSECURITY / THREAT INTELLIGENCE / DETECTION ENGINEERING</p>
+      <div class="wrap hero-layout">
+        <div class="hero-copy">
+          <p class="kicker">CYBERSECURITY / THREAT INTELLIGENCE / RISK MITIGATION</p>
           <h1 id="hero-title">Colby<br>Hinchy<span>.</span></h1>
-          <p class="role">Threat Intelligence &amp; Detection Engineering</p>
-          <p class="lead">Cybersecurity professional focused on detection engineering, threat intelligence, and threat hunting. Experience building behavioral detections, investigating endpoint telemetry, and improving SIEM/EDR visibility across enterprise environments.</p>
+          <p class="role">Cyber Threat Intelligence &amp; Risk Mitigation</p>
+          <p class="lead">I’m focused on proactively examining emerging threats and adversary tactics, techniques, and procedures (TTPs) to understand how they create exposure for organizations. I’m particularly interested in translating that intelligence into improved detection coverage, risk-based mitigation priorities, and stronger security posture with minimal operational disruption.</p>
           <div class="buttons">
             <a class="btn primary" href="#certifications">View credentials ↓</a>
             <a class="btn" href="#projects">Explore projects ↗</a>
           </div>
         </div>
-       <aside class="focus-panel" aria-label="Areas of focus">
-
-  <p class="focus-heading">AREAS OF FOCUS</p>
-
-  <div class="focus-item">
-    <span class="focus-number">01</span>
-    <div>
-      <strong>Cyber Risk &amp; Mitigation</strong>
-      <small>
-        Assessing exposure, prioritizing controls,
-        and reducing organizational risk
-      </small>
-    </div>
-  </div>
-
-  <div class="focus-item">
-    <span class="focus-number">02</span>
-    <div>
-      <strong>Cyber Threat Intelligence</strong>
-      <small>
-        Understanding adversary behavior,
-        emerging threats, and their impact
-      </small>
-    </div>
-  </div>
-
-  <div class="focus-item">
-    <span class="focus-number">03</span>
-    <div>
-      <strong>Detection &amp; Security Operations</strong>
-      <small>
-        Improving threat visibility, investigations,
-        and defensive capabilities
-      </small>
-    </div>
-  </div>
-
-</aside>
       </div>
     </section>
 
-    <!-- CREDENTIALS: SECOND SECTION -->
+    <!-- SECOND SECTION: VERIFIED BADGES, IN THE EXACT ORDER REQUESTED -->
     <section class="cert-section" id="certifications" aria-labelledby="cert-title">
       <div class="wrap">
         <div class="section-header">
@@ -260,50 +219,50 @@
           <p class="intro">Select a badge to view its individual certification and verification details.</p>
         </div>
         <div class="cert-grid">
-          <!-- AZ-900 -->
+          <!-- 1. AZ-900 -->
           <a class="cert-card" style="--step:0" href="https://learn.microsoft.com/api/credentials/share/en-us/colbyhinchy-5541/2CAA1A282EE11112?sharingId=942590DA895F4648" target="_blank" rel="noopener noreferrer" aria-label="View Microsoft Azure Fundamentals AZ-900 on Microsoft Learn">
             <div class="badge-area">
-              <img src="https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/twitter_thumb_201604_image.png" alt="Microsoft Certified Azure Fundamentals badge" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+              <img src="https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/twitter_thumb_201604_image.png" alt="Official Microsoft Certified Azure Fundamentals badge" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
               <span class="badge-error" hidden>Badge unavailable. View credential ↗</span>
             </div>
             <span class="cert-name">Microsoft Azure Fundamentals</span>
             <span class="cert-sub">AZ-900</span>
             <span class="verify">Microsoft Learn ↗</span>
           </a>
-          <!-- SECURITY+ -->
+          <!-- 2. SECURITY+: RED PLUS SERIES ARTWORK, MATCHING CySA+ -->
           <a class="cert-card" style="--step:1" href="https://www.credly.com/badges/f934a518-7b05-418c-8b17-b9093bde31e1/public_url" target="_blank" rel="noopener noreferrer" aria-label="Verify CompTIA Security+ on Credly">
             <div class="badge-area">
-              <img src="https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/twitter_thumb_201604_blob" alt="CompTIA Security+ Plus Series badge" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+              <img src="https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/twitter_thumb_201604_blob" alt="Actual CompTIA Security+ Certified Plus Series red circular badge" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
               <span class="badge-error" hidden>Badge unavailable. View credential ↗</span>
             </div>
             <span class="cert-name">CompTIA Security+</span>
             <span class="cert-sub">Core cybersecurity</span>
             <span class="verify">Verify on Credly ↗</span>
           </a>
-          <!-- CYSA+ -->
+          <!-- 3. CYSA+ -->
           <a class="cert-card" style="--step:2" href="https://www.credly.com/badges/07b948e1-80b3-4e27-aab3-1e95b32832cd/public_url" target="_blank" rel="noopener noreferrer" aria-label="Verify CompTIA CySA+ on Credly">
             <div class="badge-area">
-              <img src="https://images.credly.com/images/dcd99b5b-da24-40a6-9364-62126d590c37/twitter_thumb_201604_blob" alt="CompTIA CySA+ Plus Series badge" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+              <img src="https://images.credly.com/images/dcd99b5b-da24-40a6-9364-62126d590c37/twitter_thumb_201604_blob" alt="Actual CompTIA CySA+ Certified Plus Series red circular badge" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
               <span class="badge-error" hidden>Badge unavailable. View credential ↗</span>
             </div>
             <span class="cert-name">CompTIA CySA+</span>
             <span class="cert-sub">Security analytics</span>
             <span class="verify">Verify on Credly ↗</span>
           </a>
-          <!-- SECAI+ -->
+          <!-- 4. SECAI+ -->
           <a class="cert-card" style="--step:3" href="https://www.credly.com/badges/9871b75d-06c2-47d2-930b-94c656cfaa39/public_url" target="_blank" rel="noopener noreferrer" aria-label="Verify CompTIA SecAI+ on Credly">
             <div class="badge-area">
-              <img src="https://app.stationx.net/public/articles/cert-badges/comptia-secai.png" alt="CompTIA SecAI+ badge" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+              <img src="https://app.stationx.net/public/articles/cert-badges/comptia-secai.png" alt="Actual CompTIA SecAI+ Certification Expansion Series gold circular badge" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
               <span class="badge-error" hidden>Badge unavailable. View credential ↗</span>
             </div>
             <span class="cert-name">CompTIA SecAI+</span>
             <span class="cert-sub">AI security</span>
             <span class="verify">Verify on Credly ↗</span>
           </a>
-          <!-- CDEA: DETECTION ENGINEERING ASSOCIATE -->
+          <!-- 5. CDEA: CENTRI'S CORRECT CERTIFIED DETECTION ENGINEERING ASSOCIATE SHIELD; NOT PENTESTING AND NOT JUNIOR -->
           <a class="cert-card" style="--step:4" href="https://www.credly.com/badges/e7c5bdbd-5131-46e1-9b83-28cde81ab841/public_url" target="_blank" rel="noopener noreferrer" aria-label="Verify Certified Detection Engineering Associate CDEA on Credly">
             <div class="badge-area">
-              <img src="https://support.centri.org/hc/article_attachments/30288701324828" alt="Centri Certified Detection Engineering Associate CDEA badge" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+              <img src="https://support.centri.org/hc/article_attachments/30288701324828" alt="Actual Centri Certified Detection Engineering Associate CDEA blue shield, without Junior wording" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
               <span class="badge-error" hidden>Badge unavailable. View credential ↗</span>
             </div>
             <span class="cert-name">Certified Detection Engineering Associate</span>
@@ -314,91 +273,35 @@
       </div>
     </section>
 
+    <!-- THIRD SECTION: ABOUT -->
     <section class="section-alt" id="about" aria-labelledby="about-title">
-  <div class="wrap">
-
-    <div class="section-header">
-      <p class="kicker">ABOUT</p>
-      <h2 id="about-title">Professional Focus</h2>
-
-      <p class="intro">
-        Through my experience supporting municipal client
-        environments across Massachusetts, I've developed
-        an understanding of how cybersecurity decisions
-        affect both technical systems and the organizations
-        that depend on them.
-        <br><br>
-        My interests center on cyber threat intelligence
-        and risk mitigation. I'm particularly interested
-        in helping organizations understand their exposure,
-        prioritize security improvements, and reduce risk
-        to an acceptable level while minimizing disruption
-        to business operations.
-      </p>
-    </div>
-
-    <div class="grid-3">
-
-      <!-- CYBER RISK -->
-      <article class="card">
-        <h3>Cyber Risk Management</h3>
-
-        <p>
-          Understanding organizational exposure,
-          evaluating security gaps, and prioritizing
-          mitigations based on risk tolerance,
-          business needs, and operational impact.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Risk Assessment</span>
-          <span class="tag">Risk Mitigation</span>
-          <span class="tag">CIS Controls</span>
+      <div class="wrap">
+        <div class="section-header">
+          <p class="kicker">ABOUT</p>
+          <h2 id="about-title">Professional Focus</h2>
+          <p class="intro">Through my experience supporting municipal client environments across Massachusetts, I've developed an understanding of how cybersecurity decisions affect technical systems and the organizations that depend on them.</p>
+          <p class="intro about-followup">My interests center on cyber threat intelligence and risk mitigation. I'm particularly interested in helping organizations understand their exposure, prioritize security improvements, and reduce risk to an acceptable level while minimizing disruption to business operations.</p>
         </div>
-      </article>
-
-      <!-- THREAT INTELLIGENCE -->
-      <article class="card">
-        <h3>Cyber Threat Intelligence</h3>
-
-        <p>
-          Understanding the evolving threat landscape,
-          analyzing adversary behaviors and techniques,
-          and using threat intelligence to assess
-          exposure and inform defensive priorities.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Threat Landscape</span>
-          <span class="tag">MITRE ATT&amp;CK</span>
-          <span class="tag">Adversary TTPs</span>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Cyber Risk Management</h3>
+            <p>Evaluating security gaps and organizational exposure to prioritize mitigations based on risk tolerance, business needs, and operational impact.</p>
+            <div class="tags"><span class="tag">Risk Assessment</span><span class="tag">Risk Mitigation</span><span class="tag">CIS Controls</span></div>
+          </article>
+          <article class="card">
+            <h3>Cyber Threat Intelligence</h3>
+            <p>Understanding the evolving threat landscape and adversary behavior to assess exposure and inform defensive priorities.</p>
+            <div class="tags"><span class="tag">Threat Landscape</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">Adversary TTPs</span></div>
+          </article>
+          <article class="card">
+            <h3>Security Operations</h3>
+            <p>Applying threat hunting, detection engineering, and vulnerability management to improve visibility and support risk reduction without unnecessary operational disruption.</p>
+            <div class="tags"><span class="tag">Threat Hunting</span><span class="tag">Detection Engineering</span><span class="tag">Vulnerability Management</span></div>
+          </article>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <!-- SECURITY OPERATIONS -->
-      <article class="card">
-        <h3>Security Operations</h3>
-
-        <p>
-          Applying experience in threat hunting,
-          detection engineering, and vulnerability
-          management to improve security visibility
-          and support practical risk reduction
-          without unnecessary operational disruption.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Threat Hunting</span>
-          <span class="tag">Detection Engineering</span>
-          <span class="tag">Vulnerability Management</span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-    <!-- UPDATED RESUME EXPERIENCE -->
     <section id="experience" aria-labelledby="experience-title">
       <div class="wrap">
         <div class="section-header">
@@ -465,7 +368,6 @@
       </div>
     </section>
 
-    <!-- THREE SELECTED PROJECTS -->
     <section class="section-alt" id="projects" aria-labelledby="projects-title">
       <div class="wrap">
         <div class="section-header">
@@ -478,44 +380,30 @@
             <h3>Threat Hunt — Cargo Hold</h3>
             <p>Microsoft Defender for Endpoint investigation documenting an end-to-end intrusion. Reconstructed lateral movement, credential access, data staging, exfiltration, and persistence across 20 ATT&amp;CK-mapped findings.</p>
             <div class="tags">
-              <span class="tag">Microsoft Defender</span>
-              <span class="tag">Threat Hunting</span>
-              <span class="tag">MITRE ATT&amp;CK</span>
+              <span class="tag">Microsoft Defender</span><span class="tag">Threat Hunting</span><span class="tag">MITRE ATT&amp;CK</span>
             </div>
-            <div class="project-links">
-              <a class="text-link" href="https://github.com/Colby-hin/Threat-Hunt-Cargo-Hold" target="_blank" rel="noopener noreferrer">View project ↗</a>
-            </div>
+            <div class="project-links"><a class="text-link" href="https://github.com/Colby-hin/Threat-Hunt-Cargo-Hold" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
           </article>
           <article class="card project-card">
             <h3>Detection-as-Code Workflow</h3>
             <p>Automates Sigma rule validation through GitHub Actions, converts rules into Graylog-compatible Lucene queries, and deploys detections through the Graylog REST API.</p>
             <div class="tags">
-              <span class="tag">Sigma</span>
-              <span class="tag">Graylog</span>
-              <span class="tag">GitHub Actions</span>
+              <span class="tag">Sigma</span><span class="tag">Graylog</span><span class="tag">GitHub Actions</span>
             </div>
-            <div class="project-links">
-              <a class="text-link" href="https://github.com/Colby-hin/CJDE-Workflow" target="_blank" rel="noopener noreferrer">View project ↗</a>
-            </div>
+            <div class="project-links"><a class="text-link" href="https://github.com/Colby-hin/CJDE-Workflow" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
           </article>
           <article class="card project-card">
             <h3>AWS GRC Engineering Capstone</h3>
             <p>Built a HIPAA-aligned AWS patient-intake environment using Terraform, OPA/Rego, GitHub Actions, and OSCAL to enforce security controls and generate audit-ready evidence.</p>
             <div class="tags">
-              <span class="tag">AWS</span>
-              <span class="tag">Terraform</span>
-              <span class="tag">OPA / Rego</span>
-              <span class="tag">OSCAL</span>
+              <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">OPA / Rego</span><span class="tag">OSCAL</span>
             </div>
-            <div class="project-links">
-              <a class="text-link" href="https://github.com/Colby-hin/cgep-capstone/tree/main" target="_blank" rel="noopener noreferrer">View project ↗</a>
-            </div>
+            <div class="project-links"><a class="text-link" href="https://github.com/Colby-hin/cgep-capstone/tree/main" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SECURITY TOOLS AND PLATFORMS -->
     <section id="skills" aria-labelledby="skills-title">
       <div class="wrap">
         <div class="section-header">
@@ -565,7 +453,6 @@
       </div>
     </section>
 
-    <!-- EDUCATION -->
     <section class="section-alt" id="education" aria-labelledby="education-title">
       <div class="wrap">
         <div class="section-header">
@@ -582,46 +469,20 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="section-alt" id="contact" aria-labelledby="contact-title">
-      <div class="wrap">
-        <div class="contact-panel">
-          <div>
-            <p class="kicker">CONTACT</p>
-            <h2 id="contact-title">Contact</h2>
-            <p>For roles, collaborations, or conversations about threat intelligence and detection engineering, reach out by email or LinkedIn.</p>
-          </div>
-          <div class="buttons">
-            <a class="btn primary" href="mailto:colbyhinchy@gmail.com">Email ↗</a>
-            <a class="btn" href="https://www.linkedin.com/in/colby-hinchy/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          </div>
-        </div>
-      </div>
+      <div class="wrap"><div class="contact-panel"><div><p class="kicker">CONTACT</p><h2 id="contact-title">Contact</h2><p>For roles, collaborations, or conversations about threat intelligence and detection engineering, reach out by email or LinkedIn.</p></div><div class="buttons"><a class="btn primary" href="mailto:colbyhinchy@gmail.com">Email ↗</a><a class="btn" href="https://www.linkedin.com/in/colby-hinchy/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div></div>
     </section>
   </main>
-
-  <footer>
-    <div class="wrap foot">
-      <span>© 2026 Colby Hinchy</span>
-      <span class="foot-links">
-        <a href="https://github.com/Colby-hin" target="_blank" rel="noopener noreferrer">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/colby-hinchy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </span>
-    </div>
-  </footer>
-
+  <footer><div class="wrap foot"><span>© 2026 Colby Hinchy</span><span class="foot-links"><a href="https://github.com/Colby-hin" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/colby-hinchy/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span></div></footer>
   <script>
+    // The cards remain visible without JavaScript. Animation is an enhancement.
     (function () {
       var cards = document.querySelectorAll('.cert-card');
-
       if (!('IntersectionObserver' in window) ||
           window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        cards.forEach(function (card) {
-          card.classList.add('revealed');
-        });
+        cards.forEach(function (card) { card.classList.add('revealed'); });
         return;
       }
-
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -629,14 +490,8 @@
             observer.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -3% 0px'
-      });
-
-      cards.forEach(function (card) {
-        observer.observe(card);
-      });
+      }, { threshold: 0.12, rootMargin: '0px 0px -3% 0px' });
+      cards.forEach(function (card) { observer.observe(card); });
     }());
   </script>
 </body>
