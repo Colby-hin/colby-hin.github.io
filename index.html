@@ -811,5 +811,372 @@
       });
     }());
   </script>
+<!-- SUBTLE THREAT DETECTION ANIMATION -->
+<script>
+(function () {
+
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+
+  const style = document.createElement("style");
+
+  style.textContent = `
+
+    .threat-visual {
+      position: absolute;
+      right: 7%;
+      top: 36%;
+      width: 270px;
+      height: 215px;
+      pointer-events: none;
+      z-index: 0;
+      overflow: visible;
+    }
+
+    /* Very subtle scanning light */
+    .threat-light {
+      position: absolute;
+      left: 78px;
+      top: 25px;
+      width: 185px;
+      height: 180px;
+
+      background: radial-gradient(
+        circle,
+        rgba(115,165,220,.23) 0%,
+        rgba(70,115,170,.08) 42%,
+        transparent 73%
+      );
+
+      opacity: 0;
+      animation: scan-light 10s ease-in-out infinite;
+    }
+
+    /* Spotlight beam */
+    .threat-beam {
+      position: absolute;
+      top: 0;
+      left: 115px;
+      width: 155px;
+      height: 170px;
+
+      background: linear-gradient(
+        145deg,
+        rgba(120,170,220,.12),
+        rgba(80,130,185,.04),
+        transparent
+      );
+
+      clip-path: polygon(
+        82% 0%,
+        100% 0%,
+        80% 100%,
+        0% 100%
+      );
+
+      opacity: 0;
+      animation: scan-light 10s ease-in-out infinite;
+    }
+
+    /* Crawling bug */
+    .crawl-bug {
+      position: absolute;
+      left: 36px;
+      top: 86px;
+      width: 52px;
+      height: 52px;
+
+      color: #4b5663;
+
+      animation:
+        bug-crawl 10s ease-in-out infinite,
+        bug-illuminate 10s linear infinite;
+    }
+
+    .crawl-bug svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,.5));
+    }
+
+    /* Detection ring */
+    .threat-lock {
+      position: absolute;
+      left: 132px;
+      top: 72px;
+
+      width: 81px;
+      height: 81px;
+
+      border: 1px solid rgba(150,195,240,.8);
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 14px rgba(95,150,210,.16),
+        inset 0 0 12px rgba(95,150,210,.06);
+
+      opacity: 0;
+      transform: scale(1.4);
+
+      animation: threat-lock 10s ease-out infinite;
+    }
+
+    .threat-lock::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+
+      border: 1px dashed rgba(160,200,240,.28);
+      border-radius: 50%;
+    }
+
+    .threat-lock::after {
+      content: "+";
+      position: absolute;
+      inset: 0;
+
+      display: grid;
+      place-items: center;
+
+      font-family: monospace;
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(180,215,250,.65);
+    }
+
+    /* Detection label */
+    .threat-status {
+      position: absolute;
+      left: 103px;
+      top: 176px;
+      width: 145px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      font-family: monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #a9c7e7;
+
+      opacity: 0;
+
+      animation: threat-status 10s ease infinite;
+    }
+
+    .status-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #83b5e6;
+      box-shadow: 0 0 8px rgba(130,180,230,.6);
+    }
+
+    /* BUG MOVEMENT */
+    @keyframes bug-crawl {
+
+      0% {
+        transform: translateX(-25px) rotate(-8deg);
+        opacity: .35;
+      }
+
+      12% {
+        transform: translateX(5px) rotate(4deg);
+        opacity: .55;
+      }
+
+      22% {
+        transform: translateX(35px) rotate(-5deg);
+        opacity: .65;
+      }
+
+      34% {
+        transform: translateX(75px) rotate(3deg);
+        opacity: .8;
+      }
+
+      42%, 69% {
+        transform: translateX(110px) rotate(0deg);
+        opacity: 1;
+      }
+
+      77% {
+        transform: translateX(110px) scale(.45);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(110px) scale(.45);
+        opacity: 0;
+      }
+    }
+
+    /* BUG LIGHTS UP WHEN FOUND */
+    @keyframes bug-illuminate {
+
+      0%, 37% {
+        color: #4b5663;
+      }
+
+      47%, 70% {
+        color: #b6d4f0;
+      }
+
+      80%, 100% {
+        color: #4b5663;
+      }
+    }
+
+    /* SPOTLIGHT APPEARS */
+    @keyframes scan-light {
+
+      0%, 34% {
+        opacity: 0;
+      }
+
+      45%, 66% {
+        opacity: 1;
+      }
+
+      78%, 100% {
+        opacity: 0;
+      }
+    }
+
+    /* TARGET LOCKS ON */
+    @keyframes threat-lock {
+
+      0%, 43% {
+        opacity: 0;
+        transform: scale(1.4);
+      }
+
+      53% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      69% {
+        opacity: .85;
+        transform: scale(1);
+      }
+
+      80%, 100% {
+        opacity: 0;
+        transform: scale(.9);
+      }
+    }
+
+    /* DETECTION CONFIRMED */
+    @keyframes threat-status {
+
+      0%, 53% {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      61%, 73% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      83%, 100% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hide on smaller screens to protect layout */
+    @media (max-width: 1180px) {
+      .threat-visual {
+        display: none;
+      }
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .threat-visual {
+        display: none;
+      }
+    }
+
+  `;
+
+  document.head.appendChild(style);
+
+  const visual = document.createElement("div");
+  visual.className = "threat-visual";
+  visual.setAttribute("aria-hidden", "true");
+
+  visual.innerHTML = `
+
+    <div class="threat-beam"></div>
+    <div class="threat-light"></div>
+
+    <div class="crawl-bug">
+
+      <svg viewBox="0 0 64 64"
+           xmlns="http://www.w3.org/2000/svg"
+           fill="none">
+
+        <!-- Body -->
+        <path
+          d="M32 13
+             C42 13 47 23 47 36
+             V43
+             C47 53 40 59 32 59
+             C24 59 17 53 17 43
+             V36
+             C17 23 22 13 32 13Z"
+          stroke="currentColor"
+          stroke-width="2"
+          fill="currentColor"
+          fill-opacity=".10"
+        />
+
+        <!-- Body details -->
+        <path
+          d="M20 28H44
+             M32 28V54
+             M24 13L18 5
+             M40 13L46 5"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+        <!-- Legs -->
+        <path
+          d="M18 33L7 27
+             M18 43H6
+             M20 51L9 57
+             M46 33L57 27
+             M46 43H58
+             M44 51L55 57"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+      </svg>
+
+    </div>
+
+    <div class="threat-lock"></div>
+
+    <div class="threat-status">
+      <span class="status-dot"></span>
+      THREAT DETECTED
+    </div>
+
+  `;
+
+  hero.appendChild(visual);
+
+})();
+</script>
 </body>
 </html>
