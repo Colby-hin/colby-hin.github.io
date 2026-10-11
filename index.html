@@ -73,7 +73,7 @@
     .hero-layout { position: relative; display: flex; align-items: center; min-height: 610px; padding-block: 108px 116px; }
     .hero-copy { max-width: 875px; position: relative; z-index: 1; }
     .kicker { color: var(--blue-soft); font-size: .74rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 13px; }
-    .hero h1 { font-size: clamp(4rem, 8.5vw, 7.5rem); letter-spacing: -.08em; line-height: .98; margin: 17px 0 27px; }
+    .hero h1 { font-size: clamp(4rem, 8.5vw, 7.5rem); letter-spacing: -.08em; line-height: 1.11; margin: 17px 0 27px; }
     .hero h1 span { color: var(--blue); }
     .role { font-size: clamp(1.2rem, 2.25vw, 1.56rem); font-weight: 700; line-height: 1.4; margin: 0 0 16px; }
     .lead, .intro { color: var(--muted); max-width: 750px; margin: 0; }
@@ -291,6 +291,188 @@
       .project-feature:hover { transform: none; }
       .project-feature:hover .project-thumb img { transform: none; }
     }
+
+    /* DESIGN REFINEMENTS — restrained graphite, glass, and deep-steel-blue. */
+    body {
+      background-color: #171a1e;
+      background-image:
+        radial-gradient(ellipse 850px 750px at 83% 6%, rgba(55,78,107,.19), transparent 72%),
+        radial-gradient(ellipse 650px 570px at 4% 52%, rgba(72,81,91,.11), transparent 74%),
+        radial-gradient(ellipse 780px 600px at 85% 96%, rgba(43,62,84,.13), transparent 76%),
+        repeating-linear-gradient(134deg, transparent 0px, transparent 112px, rgba(255,255,255,.011) 113px, transparent 115px),
+        linear-gradient(115deg, #1b1e22 0%, #17191d 45%, #1a1d21 100%);
+    }
+    body::before { opacity: .17; background-size: 160px 160px; }
+    .hero {
+      isolation: isolate;
+      background:
+        radial-gradient(ellipse 630px 440px at 18% 43%, rgba(92,114,141,.145), transparent 76%),
+        radial-gradient(ellipse 440px 470px at 86% 40%, rgba(34,56,84,.12), transparent 80%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 6%; top: 8%;
+      width: min(43vw, 520px); aspect-ratio: 1;
+      border: 1px solid rgba(124,157,195,.055);
+      border-radius: 50%;
+      box-shadow: 0 0 0 60px rgba(120,155,195,.018),
+                  0 0 0 142px rgba(120,155,195,.012);
+      pointer-events: none; z-index: 0;
+    }
+    .hero-copy { position: relative; z-index: 1; }
+    section:not(.hero) { position: relative; }
+    section:not(.hero):not(.cert-section)::after {
+      content: ""; pointer-events: none;
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: min(90%, var(--max)); height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(119,147,176,.23) 28%, rgba(119,147,176,.29) 50%, rgba(119,147,176,.23) 72%, transparent);
+    }
+    .section-alt { background: rgba(7,9,12,.11); border-color: rgba(105,117,132,.16); }
+    .section-header { position: relative; }
+    /* One glass shelf, six understated pedestals. */
+    .cert-section {
+      background:
+        radial-gradient(ellipse 670px 380px at 50% 64%, rgba(52,75,103,.115), transparent 76%);
+    }
+    .cert-stage { position: relative; padding-bottom: 22px; }
+    .cert-stage::after {
+      content: "";
+      position: absolute;
+      left: 1%; right: 1%; bottom: 3px;
+      height: 30px;
+      border-top: 1px solid rgba(151,178,207,.34);
+      border-radius: 45% 45% 50% 50%;
+      background: linear-gradient(180deg, rgba(107,144,180,.115), rgba(25,36,48,.012) 82%);
+      transform: perspective(600px) rotateX(53deg);
+      box-shadow: 0 13px 33px rgba(23,45,70,.12);
+      pointer-events: none;
+    }
+    .cert-grid { position: relative; z-index: 1; }
+    .cert-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(155deg, rgba(48,53,61,.93), rgba(26,30,36,.98) 68%);
+      border-color: rgba(111,129,151,.39);
+      box-shadow: 0 15px 31px rgba(0,0,0,.21), inset 0 1px 0 rgba(255,255,255,.045);
+    }
+    .cert-card::before {
+      content: "";
+      position: absolute;
+      left: 13px; right: 13px; top: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(156,189,220,.25), transparent);
+      pointer-events: none;
+    }
+    .cert-card:hover, .cert-card:focus-visible {
+      border-color: rgba(140,174,212,.72);
+      box-shadow: 0 18px 42px rgba(0,0,0,.30), 0 0 19px rgba(69,99,137,.13), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .badge-area {
+      position: relative;
+      isolation: isolate;
+      aspect-ratio: auto;
+      width: 100%; height: 208px;
+      padding: 12px 11px 0;
+      margin-bottom: 17px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 25%, rgba(140,165,193,.09), transparent 70%),
+        linear-gradient(165deg,#2b3139,#1a1f25);
+      border: 1px solid rgba(116,139,162,.25);
+      border-radius: 11px;
+      display: flex; align-items: flex-start; justify-content: center;
+    }
+    /* Crisp glass contact line, with a little illumination below it. */
+    .badge-area::before {
+      content: "";
+      position: absolute;
+      left: 7%; right: 7%; top: 155px; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(172,204,238,.62) 50%, transparent);
+      box-shadow: 0 3px 13px rgba(105,150,199,.21);
+      pointer-events: none; z-index: 2;
+    }
+    .badge-area::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0; height: 51px;
+      background: linear-gradient(180deg, rgba(81,112,145,.16), transparent 90%);
+      pointer-events: none; z-index: 0;
+    }
+    .badge-area > img {
+      position: relative;
+      z-index: 3;
+      display: block;
+      width: 100%; height: 141px;
+      flex: 0 0 auto;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 13px rgba(0,0,0,.26));
+      transition: transform .23s ease;
+    }
+    .cert-card:hover .badge-area > img,
+    .cert-card:focus-visible .badge-area > img { transform: translateY(-2px) scale(1.025); }
+    .badge-reflection {
+      position: absolute;
+      top: 159px; left: 11px; right: 11px;
+      height: 47px;
+      overflow: hidden;
+      opacity: .22;
+      pointer-events: none;
+      z-index: 1;
+      -webkit-mask-image: linear-gradient(180deg, black 0%, transparent 100%);
+      mask-image: linear-gradient(180deg, black 0%, transparent 100%);
+      transition: opacity .2s ease;
+    }
+    .badge-reflection img {
+      position: absolute;
+      width: 100%; height: 141px;
+      top: 0; left: 0;
+      object-fit: contain;
+      transform: scaleY(-1);
+      filter: blur(1.3px) saturate(.8);
+    }
+    .cert-card:hover .badge-reflection,
+    .cert-card:focus-visible .badge-reflection { opacity: .34; }
+    /* Projects: a restrained photographic edge and a slightly nicer hover. */
+    .project-feature {
+      position: relative;
+      background: linear-gradient(145deg, #272c33, #1b1f25);
+      border-color: rgba(120,137,156,.33);
+      box-shadow: 0 19px 44px rgba(0,0,0,.21), inset 0 1px 0 rgba(255,255,255,.035);
+    }
+    .project-feature:hover,
+    .project-feature:focus-visible {
+      transform: translateY(-4px);
+      border-color: rgba(141,175,213,.70);
+      box-shadow: 0 23px 54px rgba(0,0,0,.32), 0 0 19px rgba(55,86,120,.10);
+    }
+    .project-thumb { position: relative; }
+    .project-thumb::after {
+      content: "";
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: linear-gradient(90deg, rgba(0,0,0,.09), transparent 25%, transparent 75%, rgba(0,0,0,.10));
+    }
+    .project-feature:hover .project-thumb img { transform: scale(1.025); }
+    @media (max-width: 740px) {
+      .badge-area { height: 213px; }
+      .badge-area::before { top: 158px; }
+      .badge-area > img { height: 144px; }
+      .badge-reflection { top: 162px; }
+      .badge-reflection img { height: 144px; }
+      .cert-stage::after { height: 19px; }
+      .hero::after { right: -30%; width: 95vw; opacity: .65; }
+    }
+    @media (max-width: 440px) {
+      .badge-area { height: 193px; padding: 9px 5px 0; }
+      .badge-area::before { top: 140px; }
+      .badge-area > img { height: 127px; }
+      .badge-reflection { top: 144px; left: 5px; right: 5px; }
+      .badge-reflection img { height: 127px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .badge-area > img, .badge-reflection { transition: none !important; }
+      .cert-card:hover .badge-area > img, .cert-card:focus-visible .badge-area > img { transform: none; }
+    }
   </style>
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -334,7 +516,8 @@
           <h2 id="cert-title">Credentials</h2>
           <p class="intro">Select a badge to view its individual certification and verification details.</p>
         </div>
-        <div class="cert-grid">
+        <div class="cert-stage">
+          <div class="cert-grid">
           <!-- 1. AZ-900 -->
           <a class="cert-card" style="--step:0" href="https://learn.microsoft.com/api/credentials/share/en-us/colbyhinchy-5541/2CAA1A282EE11112?sharingId=942590DA895F4648" target="_blank" rel="noopener noreferrer" aria-label="View Microsoft Azure Fundamentals AZ-900 on Microsoft Learn">
             <div class="badge-area">
@@ -395,6 +578,7 @@
             <span class="cert-sub">Centri · CDEA</span>
             <span class="verify">Verify on Credly ↗</span>
           </a>
+          </div>
         </div>
       </div>
     </section>
@@ -608,6 +792,23 @@
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -3% 0px' });
       cards.forEach(function (card) { observer.observe(card); });
+    }());
+  </script>
+
+  <script>
+    // Mirror the real badge imagery into a subtle glass reflection.
+    // If an external image is unavailable, the original fallback stays intact.
+    (function () {
+      document.querySelectorAll('.badge-area > img').forEach(function (image) {
+        var reflection = document.createElement('span');
+        reflection.className = 'badge-reflection';
+        reflection.setAttribute('aria-hidden', 'true');
+        var mirrored = image.cloneNode(false);
+        mirrored.removeAttribute('onerror');
+        mirrored.setAttribute('alt', '');
+        reflection.appendChild(mirrored);
+        image.parentElement.appendChild(reflection);
+      });
     }());
   </script>
 </body>
